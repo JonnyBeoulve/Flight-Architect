@@ -9,3 +9,7 @@ Coming soon...
 
 ## Notes
 This project just began development. My goal is to create a user friendly experience that will visually display options selected by the user. This idea was inspired by "build a car" style functionality on some car websites.
+
+Check out Flight:
+
+https://github.com/JonnyBeoulve/Flight
