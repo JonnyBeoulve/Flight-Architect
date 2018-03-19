@@ -1,0 +1,25 @@
+.FlightPackage {
+    height: 180px;
+    width: 130px;
+    background: blue;
+    border-radius: 100px 100px 20px 20px;
+    box-shadow: inset -15px 0 darkblue;
+    margin: 2% auto;
+    position: relative;
+}
+
+.FlightTheme {
+    width: 130px;
+    height: 80px;
+    background: linear-gradient(#0c7f08, #6e7005);
+    margin: 2% auto;
+    border-radius: 15px;
+}
+
+.FlightEntertainment {
+    width: 130px;
+    height: 80px;
+    background: black;
+    margin: 2% auto;
+    border-radius: 15px;
+}
