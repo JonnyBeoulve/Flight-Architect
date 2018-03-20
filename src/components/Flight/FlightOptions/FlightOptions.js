@@ -9,31 +9,19 @@ import classes from './FlightOptions.css';
 // options.
 ======================================================================*/
 class FlightOptions extends Component {
+
     render () {
         let option = null;
 
         switch (this.props.type) {
-            case ('flight-package'):
-                option = <div className={classes.FlightPackage}>
-                    <div className={classes.Package1}></div>
-                    <div className={classes.Package2}></div>
-                    <div className={classes.Package3}></div>
-                </div>;
+            case ('package1'):
+                option = <div className={classes.Package1}></div>
                 break;
-            case ('flight-theme'):
-                option = <div className={classes.FlightTheme}>
-                    <div className={classes.Theme1}></div>
-                    <div className={classes.Theme2}></div>
-                    <div className={classes.Theme3}></div>
-                </div>;
+            case ('theme1'):
+                option = <div className={classes.Theme1}></div>
                 break;
-            case ('flight-entertainment'):
-                option = <div className={classes.FlightEntertainment}>
-                    <div className={classes.Entertainment1}></div>
-                    <div className={classes.Entertainment2}></div>
-                    <div className={classes.Entertainment3}></div>
-                    <div className={classes.Entertainment4}></div>
-                </div>;
+            case ('entertainment1'):
+                option = <div className={classes.Entertainment1}></div>
                 break;
             default:
                 option = null;

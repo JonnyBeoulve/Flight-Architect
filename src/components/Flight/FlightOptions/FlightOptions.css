@@ -1,4 +1,4 @@
-.FlightPackage {
+.Package1 {
     height: 180px;
     width: 130px;
     background: blue;
@@ -8,7 +8,7 @@
     position: relative;
 }
 
-.FlightTheme {
+.Theme1 {
     width: 130px;
     height: 80px;
     background: linear-gradient(#0c7f08, #6e7005);
@@ -16,7 +16,7 @@
     border-radius: 15px;
 }
 
-.FlightEntertainment {
+.Entertainment1 {
     width: 130px;
     height: 80px;
     background: black;

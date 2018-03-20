@@ -1,0 +1,46 @@
+.FlightControl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+
+.FlightControl button {
+    display: block;
+    font: inherit;
+    padding: 5px;
+    margin: 0 5px;
+    width: 80px;
+    border: 1px solid #0e4981;
+    cursor: pointer;
+    outline: none;
+}
+
+.FlightControl button:disabled {
+    background-color: #AC9980;
+    border: 1px solid #7E7365;
+    color: #ccc;
+    cursor: default;
+}
+
+.FlightControl button:hover:disabled {
+    background-color: #AC9980;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.Label {
+    padding: 10px;
+    font-weight: bold;
+    width: 140px;
+}
+
+.FlightControl .Select {  
+    background-color: #bb06a3;
+    color: white;
+}
+
+.FlightControl .Select:hover, .FlightControl .Select:active {  
+    background-color: #66a8e6;
+    color: white;
+}
