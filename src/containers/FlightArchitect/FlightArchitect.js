@@ -9,8 +9,16 @@ import FlightControls from '../../components/Flight/FlightControls/FlightControl
 ======================================================================*/
 const OPTION_PRICES = {
     package1: 200000,
+    package2: 340000,
+    package3: 500000,
     theme1: 1000,
-    entertainment1: 500
+    theme2: 2000,
+    theme3: 3000,
+    theme4: 4000,
+    entertainment1: 500,
+    entertainment2: 600,
+    entertainment3: 700,
+    entertainment4: 800
 };
 
 /*======================================================================
@@ -22,30 +30,77 @@ class FlightArchitect extends Component {
     state = {
         architectOptions: {
             package1: 0,
+            package2: 0,
+            package3: 0,
             theme1: 0,
-            entertainment1: 0
+            theme2: 0,
+            theme3: 0,
+            theme4: 0,
+            entertainment1: 0,
+            entertainment2: 0,
+            entertainment3: 0,
+            entertainment4: 0
         },
-        totalPrice: 400000
+        previousPrice: {
+            package: 0,
+            theme: 0,
+            entertainment: 0
+        },
+        totalPrice: 0
     }
 
     /*======================================================================
     // This will handle the updating of state and pricing when a user
-    // selects an option.
+    // selects an option. CategoryType will store the name of the category
+    // to reset the state of the other options before the selected
+    // option is added to the div. Price state is also
+    // managed within this handler.
     ======================================================================*/
     selectOptionHandler = (type) => {
+        const categoryType = type.substr(0, type.length-1);
         const oldCount = this.state.architectOptions[type];
-        const updatedCount = oldCount + 1;
+        const updatedCount = 1;
+        let priceSubtraction = 0;
+        let priceAddition = OPTION_PRICES[type];
         const updatedOptions = {
             ...this.state.architectOptions
         };
+        const updatedPrice = {
+            ...this.state.previousPrice
+        };
+
+        if (categoryType === 'package') {
+            updatedOptions.package1 = 0;
+            updatedOptions.package2 = 0;
+            updatedOptions.package3 = 0;
+            priceSubtraction = updatedPrice[categoryType];
+            updatedPrice.package = priceAddition;
+        } else if (categoryType === 'theme') {
+            updatedOptions.theme1 = 0;
+            updatedOptions.theme2 = 0;
+            updatedOptions.theme3 = 0;
+            updatedOptions.theme4 = 0;
+            priceSubtraction = updatedPrice[categoryType];
+            updatedPrice.theme = priceAddition;
+        } else if (categoryType === 'entertainment') {
+            updatedOptions.entertainment1 = 0;
+            updatedOptions.entertainment2 = 0;
+            updatedOptions.entertainment3 = 0;
+            updatedOptions.entertainment4 = 0;
+            priceSubtraction = updatedPrice[categoryType];
+            updatedPrice.entertainment = priceAddition;
+        } else {
+            console.log('An error occurred during option handling.')
+            return;
+        }
 
         updatedOptions[type] = updatedCount;
-        const priceAddition = OPTION_PRICES[type];
         const oldPrice = this.state.totalPrice;
-        const newPrice = oldPrice + priceAddition;
+        const newPrice = oldPrice + priceAddition - priceSubtraction;
         this.setState({
-            totalPrice: newPrice, 
-            architectOptions: updatedOptions
+            architectOptions: updatedOptions,
+            previousPrice: updatedPrice,
+            totalPrice: newPrice
         })
     }
 
@@ -53,7 +108,7 @@ class FlightArchitect extends Component {
         return (
             <Auxiliary>
                 <Flight architectOptions={this.state.architectOptions} />
-                <FlightControls optionSelected={this.selectOptionHandler} />
+                <FlightControls optionSelected={this.selectOptionHandler} price={this.state.totalPrice} />
             </Auxiliary>
         );
     }

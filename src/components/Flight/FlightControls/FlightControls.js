@@ -10,8 +10,16 @@ import FlightControl from './FlightControl/FlightControl';
 ======================================================================*/
 const controls = [
     {label: 'Package1', type: 'package1'},
+    {label: 'Package2', type: 'package2'},
+    {label: 'Package3', type: 'package3'},
     {label: 'Theme1', type: 'theme1'},
-    {label: 'Entertainment1', type: 'entertainment1'}
+    {label: 'Theme2', type: 'theme2'},
+    {label: 'Theme3', type: 'theme3'},
+    {label: 'Theme4', type: 'theme4'},
+    {label: 'Entertainment1', type: 'entertainment1'},
+    {label: 'Entertainment2', type: 'entertainment2'},
+    {label: 'Entertainment3', type: 'entertainment3'},
+    {label: 'Entertainment4', type: 'entertainment4'}
 ];
 
 /*======================================================================
@@ -20,10 +28,11 @@ const controls = [
 ======================================================================*/
 const flightControls = (props) => (
     <div className={classes.FlightControls}>
+        <p>Current Price: <strong>{props.price}</strong></p>
         {controls.map(ctrl => (
             <FlightControl selected={() => props.optionSelected(ctrl.type)} key={ctrl.label} label={ctrl.label} />
         ))}
-        <p>Current options are limited for testing purposes. More options will be added!</p>
+        <p>Note: Option preview is in alpha. A visually attractive design will be added in a later build.</p>
     </div>
 );
 
