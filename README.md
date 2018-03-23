@@ -5,9 +5,9 @@ This React app will serve as an interactive element of my Flight website, allowi
 Coming soon...
 
 ## Programming
-HTML
-CSS
-React.js
+* HTML
+* CSS
+* React.js
 
 ## Notes
 The majority of the control logic has been finished, but there's work to do on the front-end. Namely, how each package, theme, and entertainment option is displayed visually will be dramatically improved in an upcoming update.
