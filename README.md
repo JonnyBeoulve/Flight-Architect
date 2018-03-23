@@ -5,11 +5,13 @@ This React app will serve as an interactive element of my Flight website, allowi
 Coming soon...
 
 ## Programming
-Coming soon...
+HTML
+CSS
+React.js
 
 ## Notes
-This project just began development. My goal is to create a user friendly experience that will visually display options selected by the user. This idea was inspired by "build a car" style functionality on some car websites.
+The majority of the control logic has been finished, but there's work to do on the front-end. Namely, how each package, theme, and entertainment option is displayed visually will be dramatically improved in an upcoming update.
 
-Check out Flight:
+This application is intended to serve as an interactive package customizer and order handler for my following website:
 
 https://github.com/JonnyBeoulve/Flight
