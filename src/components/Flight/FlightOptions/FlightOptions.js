@@ -32,9 +32,6 @@ class FlightOptions extends Component {
             case ('theme3'):
                 option = <div className={classes.Theme3}></div>
                 break;
-            case ('theme4'):
-                option = <div className={classes.Theme4}></div>
-                break;
             case ('entertainment1'):
                 option = <div className={classes.Entertainment1}></div>
                 break;
@@ -43,9 +40,6 @@ class FlightOptions extends Component {
                 break;
             case ('entertainment3'):
                 option = <div className={classes.Entertainment3}></div>
-                break;
-            case ('entertainment4'):
-                option = <div className={classes.Entertainment4}></div>
                 break;
             default:
                 option = null;

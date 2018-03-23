@@ -9,17 +9,15 @@ import FlightControl from './FlightControl/FlightControl';
 // be added later.
 ======================================================================*/
 const controls = [
-    {label: 'Package1', type: 'package1'},
-    {label: 'Package2', type: 'package2'},
-    {label: 'Package3', type: 'package3'},
-    {label: 'Theme1', type: 'theme1'},
-    {label: 'Theme2', type: 'theme2'},
-    {label: 'Theme3', type: 'theme3'},
-    {label: 'Theme4', type: 'theme4'},
-    {label: 'Entertainment1', type: 'entertainment1'},
-    {label: 'Entertainment2', type: 'entertainment2'},
-    {label: 'Entertainment3', type: 'entertainment3'},
-    {label: 'Entertainment4', type: 'entertainment4'}
+    {label: 'Galileo Package', type: 'package1'},
+    {label: 'Kepler Package', type: 'package2'},
+    {label: 'Gliese Package', type: 'package3'},
+    {label: 'Basic Theme', type: 'theme1'},
+    {label: 'Retro Theme', type: 'theme2'},
+    {label: 'Andromeda Theme', type: 'theme3'},
+    {label: 'Basic Entertainment', type: 'entertainment1'},
+    {label: 'Space Jam Entertainment', type: 'entertainment2'},
+    {label: 'Zero G Entertainment', type: 'entertainment3'},
 ];
 
 /*======================================================================
@@ -28,11 +26,13 @@ const controls = [
 ======================================================================*/
 const flightControls = (props) => (
     <div className={classes.FlightControls}>
-        <p>Current Price: <strong>{props.price}</strong></p>
-        {controls.map(ctrl => (
-            <FlightControl selected={() => props.optionSelected(ctrl.type)} key={ctrl.label} label={ctrl.label} />
-        ))}
-        <p>Note: Option preview is in alpha. A visually attractive design will be added in a later build.</p>
+        <p>Current Price: $<strong>{props.price}</strong></p>
+        <div className={classes.FlightControlsBox}>
+            {controls.map(ctrl => (
+                <FlightControl selected={() => props.optionSelected(ctrl.type)} key={ctrl.label} label={ctrl.label} />
+            ))}
+        </div>
+        <button className={classes.LaunchButton} disabled={!props.launchReady}>PROCEED TO LAUNCH</button>
     </div>
 );
 

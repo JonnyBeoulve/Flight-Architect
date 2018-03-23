@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import Auxiliary from '../../hoc/Auxiliary';
 import Flight from '../../components/Flight/Flight';
 import FlightControls from '../../components/Flight/FlightControls/FlightControls';
+import Footer from '../../components/Layout/Footer/Footer'
+import Header from '../../components/Layout/Header/Header'
 
 /*======================================================================
 // These are the prices for the various options.
@@ -11,14 +13,12 @@ const OPTION_PRICES = {
     package1: 200000,
     package2: 340000,
     package3: 500000,
-    theme1: 1000,
-    theme2: 2000,
+    theme1: 0,
+    theme2: 2500,
     theme3: 3000,
-    theme4: 4000,
-    entertainment1: 500,
-    entertainment2: 600,
-    entertainment3: 700,
-    entertainment4: 800
+    entertainment1: 0,
+    entertainment2: 500,
+    entertainment3: 800
 };
 
 /*======================================================================
@@ -35,17 +35,16 @@ class FlightArchitect extends Component {
             theme1: 0,
             theme2: 0,
             theme3: 0,
-            theme4: 0,
             entertainment1: 0,
             entertainment2: 0,
             entertainment3: 0,
-            entertainment4: 0
         },
         previousPrice: {
             package: 0,
             theme: 0,
             entertainment: 0
         },
+        readyForLaunch: false,
         totalPrice: 0
     }
 
@@ -53,18 +52,20 @@ class FlightArchitect extends Component {
     // This will handle the updating of state and pricing when a user
     // selects an option. CategoryType will store the name of the category
     // to reset the state of the other options before the selected
-    // option is added to the div. Price state is also
-    // managed within this handler.
+    // option is added to the div. Price state and whether or not the user
+    // can launch (only a package is required) is also managed here.
     ======================================================================*/
     selectOptionHandler = (type) => {
         const categoryType = type.substr(0, type.length-1);
-        const oldCount = this.state.architectOptions[type];
         const updatedCount = 1;
         let priceSubtraction = 0;
         let priceAddition = OPTION_PRICES[type];
         const updatedOptions = {
             ...this.state.architectOptions
         };
+        let updatedReadyForLaunch = {
+            ...this.state.readyForLaunch
+        }
         const updatedPrice = {
             ...this.state.previousPrice
         };
@@ -74,19 +75,18 @@ class FlightArchitect extends Component {
             updatedOptions.package2 = 0;
             updatedOptions.package3 = 0;
             priceSubtraction = updatedPrice[categoryType];
+            updatedReadyForLaunch = true;
             updatedPrice.package = priceAddition;
         } else if (categoryType === 'theme') {
             updatedOptions.theme1 = 0;
             updatedOptions.theme2 = 0;
             updatedOptions.theme3 = 0;
-            updatedOptions.theme4 = 0;
             priceSubtraction = updatedPrice[categoryType];
             updatedPrice.theme = priceAddition;
         } else if (categoryType === 'entertainment') {
             updatedOptions.entertainment1 = 0;
             updatedOptions.entertainment2 = 0;
             updatedOptions.entertainment3 = 0;
-            updatedOptions.entertainment4 = 0;
             priceSubtraction = updatedPrice[categoryType];
             updatedPrice.entertainment = priceAddition;
         } else {
@@ -100,6 +100,7 @@ class FlightArchitect extends Component {
         this.setState({
             architectOptions: updatedOptions,
             previousPrice: updatedPrice,
+            readyForLaunch: updatedReadyForLaunch,
             totalPrice: newPrice
         })
     }
@@ -107,8 +108,10 @@ class FlightArchitect extends Component {
     render () {
         return (
             <Auxiliary>
+                <Header />
                 <Flight architectOptions={this.state.architectOptions} />
-                <FlightControls optionSelected={this.selectOptionHandler} price={this.state.totalPrice} />
+                <FlightControls optionSelected={this.selectOptionHandler} launchReady={this.state.readyForLaunch} price={this.state.totalPrice} />
+                <Footer />             
             </Auxiliary>
         );
     }
