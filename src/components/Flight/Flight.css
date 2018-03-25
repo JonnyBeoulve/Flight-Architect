@@ -6,6 +6,11 @@
     font-weight: bold;
     font-size: 1.2rem;
     background-color: #f7f7f7;
+    padding-top: 5px;
+}
+
+.Flight p {
+    color: black;
 }
 
 @media (min-width: 1000px) and (min-height: 700px) {

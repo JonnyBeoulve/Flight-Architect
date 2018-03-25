@@ -45,6 +45,11 @@ class FlightArchitect extends Component {
             entertainment: 0
         },
         readyForLaunch: false,
+        selectedItem: {
+            package: 0,
+            theme: 0,
+            entertainment: 0
+        },
         totalPrice: 0
     }
 
@@ -52,11 +57,13 @@ class FlightArchitect extends Component {
     // This will handle the updating of state and pricing when a user
     // selects an option. CategoryType will store the name of the category
     // to reset the state of the other options before the selected
-    // option is added to the div. Price state and whether or not the user
-    // can launch (only a package is required) is also managed here.
+    // option is added to the div. Price state, which Select buttons have
+    // been made active, and whether or not the user can launch
+    // (only a package is required) is also handled here.
     ======================================================================*/
     selectOptionHandler = (type) => {
         const categoryType = type.substr(0, type.length-1);
+        const itemNumber = type.substr(type.length - 1);
         const updatedCount = 1;
         let priceSubtraction = 0;
         let priceAddition = OPTION_PRICES[type];
@@ -65,6 +72,9 @@ class FlightArchitect extends Component {
         };
         let updatedReadyForLaunch = {
             ...this.state.readyForLaunch
+        }
+        let updatedSelectedItem = {
+            ...this.state.selectedItem
         }
         const updatedPrice = {
             ...this.state.previousPrice
@@ -75,6 +85,7 @@ class FlightArchitect extends Component {
             updatedOptions.package2 = 0;
             updatedOptions.package3 = 0;
             priceSubtraction = updatedPrice[categoryType];
+            updatedSelectedItem[categoryType] = itemNumber;
             updatedReadyForLaunch = true;
             updatedPrice.package = priceAddition;
         } else if (categoryType === 'theme') {
@@ -82,12 +93,14 @@ class FlightArchitect extends Component {
             updatedOptions.theme2 = 0;
             updatedOptions.theme3 = 0;
             priceSubtraction = updatedPrice[categoryType];
+            updatedSelectedItem[categoryType] = itemNumber;
             updatedPrice.theme = priceAddition;
         } else if (categoryType === 'entertainment') {
             updatedOptions.entertainment1 = 0;
             updatedOptions.entertainment2 = 0;
             updatedOptions.entertainment3 = 0;
             priceSubtraction = updatedPrice[categoryType];
+            updatedSelectedItem[categoryType] = itemNumber;
             updatedPrice.entertainment = priceAddition;
         } else {
             console.log('An error occurred during option handling.')
@@ -101,6 +114,7 @@ class FlightArchitect extends Component {
             architectOptions: updatedOptions,
             previousPrice: updatedPrice,
             readyForLaunch: updatedReadyForLaunch,
+            selectedItem: updatedSelectedItem,
             totalPrice: newPrice
         })
     }
