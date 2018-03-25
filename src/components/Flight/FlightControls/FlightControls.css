@@ -21,10 +21,10 @@
 
 .LaunchButton {
     margin: 40px;
-    background-color: #e67224;
+    background-color: #e06000;
     outline: none;
     cursor: pointer;
-    border: 1px solid #e67224;
+    border: 1px solid #e06000;
     color: white;
     font-family: inherit;
     font-size: 1.2em;
@@ -34,8 +34,8 @@
 }
 
 .LaunchButton:hover, .OrderButton:active {
-    background-color: red;
-    border: 1px solid red;
+    background-color: #e68134;
+    border: 1px solid #e68134;
     box-shadow: 0 3rem 6rem rgba(black, .3);
 }
 

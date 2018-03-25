@@ -46,29 +46,29 @@
     height: 3ex;
     border-radius: 15ex;
     background: #f7f7f7;
-    border: 2px solid #bb06a3;
+    border: 2px solid #8d0c7c;
 }
 
 .DescriptionCircle::before {
     content: "?";
     font-size: 120%;
     font-weight: bold;
-    color: #bb06a3;
+    color: #8d0c7c;
 }
 
 .DescriptionCircle:hover {
-    background: #ffc62b;
+    background: #e68134;
 }
 
 .FlightControl .Select {  
-    background-color: #bb06a3;
+    background-color: #8d0c7c;
     color: white;
     border-radius: 2px;
 }
 
 .FlightControl .Select:hover  {  
     color: white;
-    border-top: 1px solid #ffc62b;
+    border-top: 1px solid #e68134;
 }
 
 .FlightControl .Select:active {
