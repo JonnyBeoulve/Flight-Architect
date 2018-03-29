@@ -1,7 +1,7 @@
 .Flight {
     width: 100%;
     margin: auto;
-    height: 600px;
+    height: 500px;
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
@@ -13,20 +13,12 @@
     color: black;
 }
 
-@media (min-width: 1000px) and (min-height: 700px) {
+@media only screen and (max-width: 479px) {
+
     .Flight {
         height: 600px;
     }
-}
-
-@media (min-width: 500px) and (min-height: 401px) {
-    .Flight {
-        height: 600px;
-    }
-}
-
-@media (min-width: 500px) and (min-height: 400px) {
-    .Flight {
-        height: 500px;
+    .Flight p {
+        font-size: .9em;
     }
 }

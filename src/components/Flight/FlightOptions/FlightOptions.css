@@ -1,82 +1,318 @@
 /*======================================================================
-// These are the options that the user can choose between. Currently,
-// their design is a placeholder while I work on the program's logic.
-// I will implement attractive designs for these in the near future.
+// These are the options that the user can choose between. Animation
+// for spaceship packages obtained through CodePen, although I was
+// unable to find the original artist/animator.
 ======================================================================*/
-.Package1 {
-    height: 180px;
+.Center {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 300px; 
+    margin-left: -150px;
+    margin-top: -150px;
+    transform: rotate(90deg);
+}
+
+.Package1Spaceship {
+    position: inherit;
+    left: 50%;
+    margin-left: -90px;
+    height: 170px;
+    width: 128px;
+    background: #0e4981;
+    border-radius: 100px 100px 20px 20px;
+}
+
+.Package2Spaceship {
+    position: inherit;
+    left: 50%;
+    margin-left: -90px;
+    height: 175px;
     width: 130px;
-    background: #444;
+    background: #e06000;
     border-radius: 100px 100px 20px 20px;
-    box-shadow: inset -15px 0 #555;
-    margin: 2% auto;
-    position: relative;
 }
 
-.Package2 {
+.Package3Spaceship {
+    position: inherit;
+    left: 50%;
+    margin-left: -90px;
     height: 180px;
-    width: 150px;
-    background: purple;
+    width: 132px;
+    background: #270022;
     border-radius: 100px 100px 20px 20px;
-    box-shadow: inset -15px 0 rgb(80, 1, 80);
-    margin: 2% auto;
-    position: relative;
 }
 
-.Package3 {
-    height: 180px;
-    width: 170px;
-    background: orange;
-    border-radius: 100px 100px 20px 20px;
-    box-shadow: inset -15px 0 darkorange;
-    margin: 2% auto;
-    position: relative;
+.Window {
+    position: inherit;
+    margin-top: 35px;
+    margin-left: 35px;
+    height: 40px;
+    width: 40px;
+    background: #999;
+    border-radius: 50%;
+    border: 5px solid #000;
+    animation: window 3s infinite linear;
+}
+
+.Tail {
+    top: 50%;
+    left: 50%;
+    margin-left: -106px;
+    margin-top: 40px;
+    position: inherit;
+    height: 0;
+    width: 120px;
+    border-bottom: 30px solid #444;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    padding: 0 2px 0 0;
+}
+
+.Leftwing {
+    top: 50%;
+    left: 50%;
+    margin-left: 48px;
+    margin-top: -60px;
+    position: inherit;
+    height: 0;
+    width: 20px;
+    border-bottom: 60px solid #444;
+    border-left: 0px solid transparent;
+    border-right: 30px solid transparent;
+    padding: 0 2px 0 0;
+    animation: from-to 3s infinite linear;
+}
+
+.Rightwing {
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -60px;
+    position: inherit;
+    height: 0;
+    width: 20px;
+    border-bottom: 60px solid #444;
+    border-left: 30px solid transparent;
+    border-right: 0px solid transparent;
+    padding: 0 2px 0 0;
+    animation: to-from 3s infinite linear;
+}
+
+.Exhaust {
+    left: 50%;
+    top: 50%; 
+    margin-left:  -62px;
+    margin-top: 40px;
+    position: inherit;
+    background:red;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px 10px 50px 50px;
+    transform: rotate(135deg);
+}
+
+.Tail {
+    left: 50%;
+    top: 50%; 
+    margin-left:  -62px;
+    margin-top: 80px;
+    position: inherit;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 200px 34px 0 34px;
+    border-color: red transparent transparent transparent;
+    animation: burn .1s infinite linear;
 }
 
 .Theme1 {
-    width: 230px;
-    height: 80px;
-    background: #555;
-    margin: 2% auto;
-    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(1, 12, 36), #f7f7f7);
+    z-index: 10;
 }
 
 .Theme2 {
-    width: 230px;
-    height: 80px;
-    background: linear-gradient(rgb(230, 38, 255), rgb(255, 33, 33));
-    margin: 2% auto;
-    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(231, 16, 16), #f7f7f7);
+    z-index: 10;
 }
 
 .Theme3 {
-    width: 230px;
-    height: 80px;
-    background: linear-gradient(rgb(30, 8, 233), rgb(6, 26, 71));
-    margin: 2% auto;
-    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#6d005e, #f7f7f7);
+    z-index: 10;
 }
 
 .Entertainment1 {
-    width: 230px;
+    position: absolute;
+    left: 54%;
+    top: 550px; 
+    margin-left: -150px;
+    margin-top: -150px;
+    width: 140px;
     height: 80px;
-    background: #555;
-    margin: 2% auto;
+    background: rgb(1, 12, 36);
     border-radius: 15px;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    font-size: .7em;
+    color: #f7f7f7;
+    padding: 5px 5px 5px 5px;
+    line-height: 40px;
+    z-index: 99;
 }
 
+.Entertainment1:before, Entertainment1:after {
+    content:"";
+    position:absolute;
+    bottom:5px;top:5px;left:5px;right:5px;
+    z-index:-1;
+    border-radius:100px/30px;
+    -webkit-box-shadow:0 0 20px 1px rgb(255, 255, 255);
+    -moz-box-shadow:0 0 20px 1px rgb(255, 255, 255);
+    box-shadow: 0 0 20px 1px rgb(255, 255, 255);
+}
+
+
 .Entertainment2 {
-    width: 230px;
+    position: absolute;
+    left: 54%;
+    top: 550px; 
+    margin-left: -150px;
+    margin-top: -150px;
+    width: 140px;
     height: 80px;
-    background: rgb(11, 88, 99);
-    margin: 2% auto;
+    background: rgb(2, 43, 49);
     border-radius: 15px;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    font-size: .7em;
+    color: #f7f7f7;
+    padding: 5px 5px 5px 5px;
+    line-height: 40px;
+    z-index: 99;
+}
+
+.Entertainment2:before, Entertainment2:after {
+    content:"";
+    position:absolute;
+    bottom:5px;top:5px;left:5px;right:5px;
+    z-index:-1;
+    border-radius:100px/30px;
+    -webkit-box-shadow:0 0 30px 2px #479F41;
+    -moz-box-shadow:0 0 30px 2px #479F41;
+    box-shadow: 0 0 30px 2px #479F41;
 }
 
 .Entertainment3 {
-    width: 230px;
+    position: absolute;
+    left: 54%;
+    top: 550px; 
+    margin-left: -150px;
+    margin-top: -150px;
+    width: 140px;
     height: 80px;
-    background: rgb(4, 9, 73);
-    margin: 2% auto;
+    background: black;
     border-radius: 15px;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    font-size: .7em;
+    color: #f7f7f7;
+    padding: 5px 5px 5px 5px;
+    line-height: 40px;
+    z-index: 99;
+}
+
+.Entertainment3:before, Entertainment3:after {
+    content:"";
+    position:absolute;
+    bottom:5px;top:5px;left:5px;right:5px;
+    z-index:-1;
+    border-radius:100px/30px;
+    -webkit-box-shadow:0 0 50px 4px #8d0c7c;
+    -moz-box-shadow:0 0 50px 4px #8d0c7c;
+    box-shadow: 0 0 50px 4px #8d0c7c;
+}
+
+
+@keyframes burn {
+    0% {border-width: 175px 34px 0 34px;}
+    25% {border-width: 100px 34px 0 34px;}
+    50% {border-width: 200px 34px 0 34px;}
+    75% {border-width: 125px 34px 0 34px;}
+    100% {border-width: 175px 34px 0 34px;}
+}
+
+@keyframes from-to {
+    0% {
+        margin-left: 38px;
+        width: 20px;
+        border-bottom: 60px solid #000;
+        border-left: 0px solid transparent;
+        border-right: 30px solid transparent;
+    }
+    50% {
+        margin-left: 48px;
+        width: 10px;
+        border-bottom: 60px solid #222;
+        border-left: 0px solid transparent;
+        border-right: 15px solid transparent;
+    }
+    100% {
+        margin-left: 38px;
+        width: 20px;
+        border-bottom: 60px solid #000;
+        border-left: 0px solid transparent;
+        border-right: 30px solid transparent;
+    }
+}
+
+@keyframes to-from {
+    0% {
+        margin-left: -125px;
+        width: 10px;
+        border-bottom: 60px solid #000;
+        border-left: 15px solid transparent;
+        border-right: 0px solid transparent;
+    }
+    50% {
+        margin-left: -140px;
+        width: 20px;
+        border-bottom: 60px solid #222;
+        border-left: 30px solid transparent;
+        border-right: 0px solid transparent;
+    }
+    100% {
+        margin-left: -125px;
+        width: 10px;
+        border-bottom: 60px solid #000;
+        border-left: 15px solid transparent;
+        border-right: 0px solid transparent;
+    }
+}
+
+@keyframes window {
+    0% {
+        margin-left: 25px;
+    }
+    50% {
+        margin-left: 45px;
+    }
+    100% {
+        margin-left: 25px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+  
+    .Center {
+        transform: rotate(0deg);
+        left: 55%;
+    }
+
+    .Entertainment1, .Entertainment2, .Entertainment3 {
+        display:  none;
+    }
 }

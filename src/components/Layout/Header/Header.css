@@ -1,7 +1,9 @@
 .Header {
+    position: fixed;
     background-color: #f7f7f7;
     width: 100%;
     height: 80px;
+    z-index: 999;
 }
 
 .HeaderName {
@@ -20,4 +22,15 @@
     margin-left: 10px;
     font-size: 1.6em;
     color: black;
+}
+
+@media only screen and (max-width: 479px) {
+    .Header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .HeaderName h2 {
+        font-size: 1.5em;
+    }
 }

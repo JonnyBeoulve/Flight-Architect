@@ -32,7 +32,7 @@ const flightControls = (props) => (
                 <FlightControl selected={() => props.optionSelected(ctrl.type)} key={ctrl.label} label={ctrl.label} description={ctrl.description} />
             ))}
         </div>
-        <button className={classes.LaunchButton} disabled={!props.launchReady}>PROCEED TO LAUNCH</button>
+        <button className={classes.LaunchButton} disabled={!props.launchReady} onClick={() => props.handleLaunch()}>PROCEED TO LAUNCH</button>
     </div>
 );
 

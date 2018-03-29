@@ -75,3 +75,23 @@
     color: white;
     background-color: #6d005e;
 }
+
+@media only screen and (max-width: 479px) {
+  
+    .FlightControl {
+        display: flex;
+        flex-direction: row;
+        margin: 5px;
+    }
+
+    .Label {
+        font-size: .8em;
+        padding: 0;
+        font-weight: bold;
+        width: 130px
+    }
+
+    .FlightControl .Select { 
+        font-size: .8em;
+    }
+}

@@ -119,12 +119,19 @@ class FlightArchitect extends Component {
         })
     }
 
+    /*======================================================================
+    // This will handle the "Proceed To Launch" button. Work in progress.
+    ======================================================================*/
+    handleLaunch = (e) => {
+        alert("Launch Scheduled");
+    }
+
     render () {
         return (
             <Auxiliary>
                 <Header />
                 <Flight architectOptions={this.state.architectOptions} />
-                <FlightControls optionSelected={this.selectOptionHandler} launchReady={this.state.readyForLaunch} price={this.state.totalPrice} />
+                <FlightControls handleLaunch={this.handleLaunch} optionSelected={this.selectOptionHandler} launchReady={this.state.readyForLaunch} price={this.state.totalPrice} />
                 <Footer />             
             </Auxiliary>
         );

@@ -7,7 +7,7 @@ import classes from './Footer.css';
 ======================================================================*/
 const Header = (props) => (
   <div className={classes.Footer}>
-    <p>Made by <a href="http://www.jonathanleack.com/">Jonathan Leack</a>. Work in progress.</p>
+    <p>Made by <a href="http://www.jonathanleack.com/">Jonathan Leack</a>.</p>
   </div>
 )
 

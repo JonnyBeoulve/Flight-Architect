@@ -15,13 +15,13 @@ class FlightOptions extends Component {
 
         switch (this.props.type) {
             case ('package1'):
-                option = <div className={classes.Package1}></div>
+                option = <div className={classes.Center}><div className={classes.Package1Spaceship}><div className={classes.Window}></div></div><div className={classes.Tail}></div><div className={classes.Leftwing}></div><div className={classes.Rightwing}></div><div className={classes.Exhaust}></div><div className={classes.Tail}></div></div>
                 break;
             case ('package2'):
-                option = <div className={classes.Package2}></div>
+                option = <div className={classes.Center}><div className={classes.Package2Spaceship}><div className={classes.Window}></div></div><div className={classes.Tail}></div><div className={classes.Leftwing}></div><div className={classes.Rightwing}></div><div className={classes.Exhaust}></div><div className={classes.Tail}></div></div>
                 break;
             case ('package3'):
-                option = <div className={classes.Package3}></div>
+                option = <div className={classes.Center}><div className={classes.Package3Spaceship}><div className={classes.Window}></div></div><div className={classes.Tail}></div><div className={classes.Leftwing}></div><div className={classes.Rightwing}></div><div className={classes.Exhaust}></div><div className={classes.Tail}></div></div>
                 break;
             case ('theme1'):
                 option = <div className={classes.Theme1}></div>
@@ -33,13 +33,13 @@ class FlightOptions extends Component {
                 option = <div className={classes.Theme3}></div>
                 break;
             case ('entertainment1'):
-                option = <div className={classes.Entertainment1}></div>
+                option = <div className={classes.Entertainment1}>Basic Entertainment</div>
                 break;
             case ('entertainment2'):
-                option = <div className={classes.Entertainment2}></div>
+                option = <div className={classes.Entertainment2}>Space Jam Entertainment</div>
                 break;
             case ('entertainment3'):
-                option = <div className={classes.Entertainment3}></div>
+                option = <div className={classes.Entertainment3}>Zero G Entertainment</div>
                 break;
             default:
                 option = null;
