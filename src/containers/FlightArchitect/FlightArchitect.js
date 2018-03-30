@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import Auxiliary from '../../hoc/Auxiliary';
 import Flight from '../../components/Flight/Flight';
 import FlightControls from '../../components/Flight/FlightControls/FlightControls';
+import FlightLaunch from '../../components/Flight/FlightLaunch/FlightLaunch';
 import Footer from '../../components/Layout/Footer/Footer'
 import Header from '../../components/Layout/Header/Header'
 
@@ -39,6 +40,7 @@ class FlightArchitect extends Component {
             entertainment2: 0,
             entertainment3: 0,
         },
+        launchForm: false,
         previousPrice: {
             package: 0,
             theme: 0,
@@ -120,10 +122,26 @@ class FlightArchitect extends Component {
     }
 
     /*======================================================================
-    // This will handle the "Proceed To Launch" button. Work in progress.
+    // This will handle the "Proceed To Launch" button, opening a form
+    // for the user to contact Flight.
     ======================================================================*/
     handleLaunch = (e) => {
-        alert("Launch Scheduled");
+        this.setState({
+            launchForm: true
+        })
+    }
+
+    handleLaunchClose = (e) => {
+        this.setState({
+            launchForm: false
+        })
+    }
+
+    handleContactHQ = (e) => {
+        alert("Contact HQ coming soon.");
+        this.setState({
+            launchForm: false
+        })
     }
 
     render () {
@@ -132,6 +150,9 @@ class FlightArchitect extends Component {
                 <Header />
                 <Flight architectOptions={this.state.architectOptions} />
                 <FlightControls handleLaunch={this.handleLaunch} optionSelected={this.selectOptionHandler} launchReady={this.state.readyForLaunch} price={this.state.totalPrice} />
+                {(this.state.launchForm)
+                    ? <FlightLaunch handleClose={this.handleLaunchClose} handleContact={this.handleContactHQ} />
+                    : <div></div> }
                 <Footer />             
             </Auxiliary>
         );

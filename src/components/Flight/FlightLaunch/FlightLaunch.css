@@ -1,0 +1,78 @@
+.FlightLaunch {
+    display: block;
+    position: fixed;
+    text-align: center;
+    margin: 0 auto;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 500px;
+    width: 400px;
+    background-image: linear-gradient(to right, #0e4981, #8d0c7c);
+    border-radius: 2px;
+    border: 2px solid #0e4981;
+    box-shadow: 0 3rem 6rem rgba(black, .3);
+    padding: 10px 10px 10px 10px;
+    z-index: 100;
+}
+
+.FlightLaunch img {
+    margin-top: 30px;
+    width: 350px;
+    border-bottom: 1px solid #e68134;
+}
+
+.FlightLaunchClose {
+    float: right;
+    font-weight: bold;
+    line-height: 0;
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    color: #222;
+}
+
+.FlightLaunchClose:hover {
+    color: black;
+}
+
+.FlightLaunch input[type=text], .FlightLaunch input[type=email] {
+    margin-top: 10px;
+    font-size: .8em;
+    font-family: inherit;
+    padding: 1em 1em;
+    border-radius: 2px;
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 150px;
+    height: 10px;
+    transition: all .3s;
+}
+
+.FlightLaunch button {
+    margin-top: 10px;
+    background-color: #e06000;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #e06000;
+    color: white;
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    box-shadow: 0 3rem 6rem rgba(black, .3);
+    border-radius: 2px;
+}
+
+.FlightLaunch button:hover {
+    background-color: #e68134;
+    border: 1px solid #e68134;
+    box-shadow: 0 3rem 6rem rgba(black, .3);
+}
+
+@media only screen and (max-width: 479px) {
+    .FlightLaunch {
+        top: 15%;
+        width:  80%;
+        height: 75%;
+    }
+}
