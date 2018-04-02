@@ -9,6 +9,7 @@ https://flight-architect.firebaseapp.com/
 ## Programming
 * HTML
 * CSS
+* JavaScript
 * React.js
 
 ## Notes
