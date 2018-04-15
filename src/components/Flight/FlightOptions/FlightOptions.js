@@ -3,6 +3,19 @@ import PropTypes from 'prop-types';
 
 import classes from './FlightOptions.css';
 
+import { slideInLeft } from 'react-animations';
+import { StyleSheet, css } from 'aphrodite';
+
+/*======================================================== 
+// Animated styles using Aphrodite and React Animations.
+========================================================*/
+const styles = StyleSheet.create({
+    slideInLeft: {
+        animationName: slideInLeft,
+        animationDuration: '1s'
+    }
+})
+
 /*======================================================================
 // As the user selects various flight options, this will employ 
 // css to switch visible elements on the page that denote the
@@ -15,13 +28,13 @@ class FlightOptions extends Component {
 
         switch (this.props.type) {
             case ('package1'):
-                option = <div className={classes.Center}><div className={classes.Package1Spaceship}><div className={classes.Window}></div></div><div className={classes.Tail}></div><div className={classes.Leftwing}></div><div className={classes.Rightwing}></div><div className={classes.Exhaust}></div><div className={classes.Tail}></div></div>
+                option = <div className={css(styles.slideInLeft)}><div className={classes.Center}><div className={classes.Package1Spaceship}><div className={classes.Window}></div></div><div className={classes.Tail}></div><div className={classes.Leftwing}></div><div className={classes.Rightwing}></div><div className={classes.Exhaust}></div><div className={classes.Tail}></div></div></div>
                 break;
             case ('package2'):
-                option = <div className={classes.Center}><div className={classes.Package2Spaceship}><div className={classes.Window}></div></div><div className={classes.Tail}></div><div className={classes.Leftwing}></div><div className={classes.Rightwing}></div><div className={classes.Exhaust}></div><div className={classes.Tail}></div></div>
+                option = <div className={css(styles.slideInLeft)}><div className={classes.Center}><div className={classes.Package2Spaceship}><div className={classes.Window}></div></div><div className={classes.Tail}></div><div className={classes.Leftwing}></div><div className={classes.Rightwing}></div><div className={classes.Exhaust}></div><div className={classes.Tail}></div></div></div>
                 break;
             case ('package3'):
-                option = <div className={classes.Center}><div className={classes.Package3Spaceship}><div className={classes.Window}></div></div><div className={classes.Tail}></div><div className={classes.Leftwing}></div><div className={classes.Rightwing}></div><div className={classes.Exhaust}></div><div className={classes.Tail}></div></div>
+                option = <div className={css(styles.slideInLeft)}><div className={classes.Center}><div className={classes.Package3Spaceship}><div className={classes.Window}></div></div><div className={classes.Tail}></div><div className={classes.Leftwing}></div><div className={classes.Rightwing}></div><div className={classes.Exhaust}></div><div className={classes.Tail}></div></div></div>
                 break;
             case ('theme1'):
                 option = <div className={classes.Theme1}></div>

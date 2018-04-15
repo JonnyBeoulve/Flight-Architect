@@ -47,6 +47,9 @@
     border-radius: 15ex;
     background: #f7f7f7;
     border: 2px solid #8d0c7c;
+    -webkit-box-shadow: 0 5px 3px -3px #333;
+	-moz-box-shadow: 0 5px 3px -3px #333;
+	box-shadow: 0 5px 3px -3px #333;
 }
 
 .DescriptionCircle::before {
@@ -64,6 +67,9 @@
     background-color: #8d0c7c;
     color: white;
     border-radius: 2px;
+    -webkit-box-shadow: 0 5px 3px -3px #333;
+	-moz-box-shadow: 0 5px 3px -3px #333;
+	box-shadow: 0 5px 3px -3px #333;
 }
 
 .FlightControl .Select:hover  {  
