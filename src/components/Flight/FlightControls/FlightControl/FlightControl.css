@@ -91,7 +91,7 @@
 }
 
 .FlightControl .SelectActive:hover  {  
-    border-top: 3px solid red;
+    border-top: 3px solid #8d0c7c;
 }
 
 .FlightControl .Select:active {
