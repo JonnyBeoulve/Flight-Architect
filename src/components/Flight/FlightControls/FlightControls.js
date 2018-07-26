@@ -24,16 +24,16 @@ const controls = [
 // This will house the Flight Controls div which will contain several
 // options.
 ======================================================================*/
-const flightControls = (props) => (
+const FlightControls = (props) => (
     <div className={classes.FlightControls}>
         <p>Current Price: $<strong>{props.price}</strong></p>
         <div className={classes.FlightControlsBox}>
-            {controls.map(ctrl => (
-                <FlightControl selected={() => props.optionSelected(ctrl.type)} key={ctrl.label} label={ctrl.label} description={ctrl.description} />
+            {controls.map((ctrl,index) => (
+                <FlightControl isDisabled={props.optionReady[`${index}`]} selected={() => props.optionSelected(ctrl.type)} key={ctrl.label} label={ctrl.label} description={ctrl.description} />
             ))}
         </div>
         <button className={classes.LaunchButton} disabled={!props.launchReady} onClick={() => props.handleLaunch()}>PROCEED TO LAUNCH</button>
     </div>
 );
 
-export default flightControls;
+export default FlightControls;

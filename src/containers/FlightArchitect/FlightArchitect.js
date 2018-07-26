@@ -46,6 +46,17 @@ class FlightArchitect extends Component {
             theme: 0,
             entertainment: 0
         },
+        readyOption: [
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ],
         readyForLaunch: false,
         selectedItem: {
             package: 0,
@@ -72,12 +83,13 @@ class FlightArchitect extends Component {
         const updatedOptions = {
             ...this.state.architectOptions
         };
-        let updatedReadyForLaunch = {
-            ...this.state.readyForLaunch
-        }
         let updatedSelectedItem = {
             ...this.state.selectedItem
         }
+        let updatedReadyOption = {
+            ...this.state.readyOption
+        }
+        let updatedReadyForLaunch = this.state.readyForLaunch
         const updatedPrice = {
             ...this.state.previousPrice
         };
@@ -86,14 +98,19 @@ class FlightArchitect extends Component {
             updatedOptions.package1 = 0;
             updatedOptions.package2 = 0;
             updatedOptions.package3 = 0;
+            updatedReadyOption[3] = true;
+            updatedReadyOption[4] = true;
+            updatedReadyOption[5] = true;
             priceSubtraction = updatedPrice[categoryType];
             updatedSelectedItem[categoryType] = itemNumber;
-            updatedReadyForLaunch = true;
             updatedPrice.package = priceAddition;
         } else if (categoryType === 'theme') {
             updatedOptions.theme1 = 0;
             updatedOptions.theme2 = 0;
             updatedOptions.theme3 = 0;
+            updatedReadyOption[6] = true;
+            updatedReadyOption[7] = true;
+            updatedReadyOption[8] = true;
             priceSubtraction = updatedPrice[categoryType];
             updatedSelectedItem[categoryType] = itemNumber;
             updatedPrice.theme = priceAddition;
@@ -103,6 +120,7 @@ class FlightArchitect extends Component {
             updatedOptions.entertainment3 = 0;
             priceSubtraction = updatedPrice[categoryType];
             updatedSelectedItem[categoryType] = itemNumber;
+            updatedReadyForLaunch = true;
             updatedPrice.entertainment = priceAddition;
         } else {
             console.log('An error occurred during option handling.')
@@ -115,6 +133,7 @@ class FlightArchitect extends Component {
         this.setState({
             architectOptions: updatedOptions,
             previousPrice: updatedPrice,
+            readyOption: updatedReadyOption,
             readyForLaunch: updatedReadyForLaunch,
             selectedItem: updatedSelectedItem,
             totalPrice: newPrice
@@ -149,7 +168,7 @@ class FlightArchitect extends Component {
             <Auxiliary>
                 <Header />
                 <Flight architectOptions={this.state.architectOptions} />
-                <FlightControls handleLaunch={this.handleLaunch} optionSelected={this.selectOptionHandler} launchReady={this.state.readyForLaunch} price={this.state.totalPrice} />
+                <FlightControls handleLaunch={this.handleLaunch} optionReady={this.state.readyOption} optionSelected={this.selectOptionHandler} launchReady={this.state.readyForLaunch} price={this.state.totalPrice} />
                 {(this.state.launchForm)
                     ? <FlightLaunch handleClose={this.handleLaunchClose} handleContact={this.handleContactHQ} />
                     : <div></div> }
