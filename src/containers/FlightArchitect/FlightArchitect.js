@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 
-import Auxiliary from '../../hoc/Auxiliary';
 import Flight from '../../components/Flight/Flight';
 import FlightControls from '../../components/Flight/FlightControls/FlightControls';
 import FlightLaunch from '../../components/Flight/FlightLaunch/FlightLaunch';
@@ -165,7 +164,7 @@ class FlightArchitect extends Component {
 
     render () {
         return (
-            <Auxiliary>
+            <Fragment>
                 <Header />
                 <Flight architectOptions={this.state.architectOptions} />
                 <FlightControls handleLaunch={this.handleLaunch} optionReady={this.state.readyOption} optionSelected={this.selectOptionHandler} launchReady={this.state.readyForLaunch} price={this.state.totalPrice} />
@@ -173,7 +172,7 @@ class FlightArchitect extends Component {
                     ? <FlightLaunch handleClose={this.handleLaunchClose} handleContact={this.handleContactHQ} />
                     : <div></div> }
                 <Footer />             
-            </Auxiliary>
+            </Fragment>
         );
     }
 }

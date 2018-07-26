@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-
-import classes from './FlightOptions.css';
-
 import { slideInLeft } from 'react-animations';
 import { StyleSheet, css } from 'aphrodite';
+
+import classes from './FlightOptions.css';
 
 /*======================================================== 
 // Animated styles using Aphrodite and React Animations.

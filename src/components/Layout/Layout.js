@@ -1,15 +1,14 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
-import Auxiliary from '../../hoc/Auxiliary';
 import classes from './Layout.css';
 
-const layout = (props) => (
-  <Auxiliary>
+const Layout = (props) => (
+  <Fragment>
     <div></div>
     <main className={classes.Content}>
       {props.children}
     </main>
-  </Auxiliary>
+  </Fragment>
 );
 
-export default layout;
+export default Layout;
