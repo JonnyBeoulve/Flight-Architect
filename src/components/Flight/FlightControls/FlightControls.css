@@ -38,7 +38,7 @@
     border-radius: 2px;
 }
 
-.LaunchButton:hover, .OrderButton:active {
+.LaunchButton:hover {
     background-color: #e68134;
     border: 1px solid #e68134;
     -webkit-box-shadow: 0 10px 6px -6px #333;

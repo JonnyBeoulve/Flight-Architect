@@ -17,15 +17,16 @@
 }
 
 .FlightControl button:disabled {
-    background-color: #AC9980;
-    border: 1px solid #7E7365;
-    color: #ccc;
+    border-top: 3px solid #C7C6C6;
+    background-color: #C7C6C6;
+    color: #888888;
     cursor: default;
 }
 
 .FlightControl button:hover:disabled {
-    background-color: #AC9980;
-    color: #ccc;
+    border-top: 3px solid #C7C6C6;
+    background-color: #C7C6C6;
+    color: #888888;
     cursor: not-allowed;
 }
 
@@ -63,7 +64,7 @@
     background: #e68134;
 }
 
-.FlightControl .Select {  
+.FlightControl .SelectInactive {  
     background-color: #8d0c7c;
     border-top: 3px solid #8d0c7c;
     color: white;
@@ -74,8 +75,23 @@
     transition-duration: 1.5s;
 }
 
-.FlightControl .Select:hover  {  
+.FlightControl .SelectInactive:hover  {  
     border-top: 3px solid #e68134;
+}
+
+.FlightControl .SelectActive {  
+    background-color: #e68134;
+    border-top: 3px solid #8d0c7c;
+    color: white;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 5px 3px -3px #333;
+	-moz-box-shadow: 0 5px 3px -3px #333;
+    box-shadow: 0 5px 3px -3px #333;
+    transition-duration: 1.5s;
+}
+
+.FlightControl .SelectActive:hover  {  
+    border-top: 3px solid red;
 }
 
 .FlightControl .Select:active {

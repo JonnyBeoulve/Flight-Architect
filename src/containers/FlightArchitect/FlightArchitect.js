@@ -23,8 +23,9 @@ const OPTION_PRICES = {
 
 /*======================================================================
 // This container will store the state of which options the user has
-// selected. It will also render the Auxiliary component along with
-// the core UI elements.
+// selected, the availability of options as the user works through
+// the three tiers of choices, and whether or not launch/checkout
+// is available.
 ======================================================================*/
 class FlightArchitect extends Component {
     state = {
@@ -39,13 +40,13 @@ class FlightArchitect extends Component {
             entertainment2: 0,
             entertainment3: 0,
         },
-        launchForm: false,
         previousPrice: {
             package: 0,
             theme: 0,
             entertainment: 0
         },
-        readyOption: [
+        totalPrice: 0,
+        readyOptions: [
             true,
             true,
             true,
@@ -57,12 +58,7 @@ class FlightArchitect extends Component {
             false
         ],
         readyForLaunch: false,
-        selectedItem: {
-            package: 0,
-            theme: 0,
-            entertainment: 0
-        },
-        totalPrice: 0
+        launchForm: false
     }
 
     /*======================================================================
@@ -74,19 +70,14 @@ class FlightArchitect extends Component {
     // (only a package is required) is also handled here.
     ======================================================================*/
     selectOptionHandler = (type) => {
-        const categoryType = type.substr(0, type.length-1);
-        const itemNumber = type.substr(type.length - 1);
-        const updatedCount = 1;
+        const categoryType = type.substr(0, type.length - 1);
         let priceSubtraction = 0;
         let priceAddition = OPTION_PRICES[type];
         const updatedOptions = {
             ...this.state.architectOptions
         };
-        let updatedSelectedItem = {
-            ...this.state.selectedItem
-        }
-        let updatedReadyOption = {
-            ...this.state.readyOption
+        let updatedReadyOptions = {
+            ...this.state.readyOptions
         }
         let updatedReadyForLaunch = this.state.readyForLaunch
         const updatedPrice = {
@@ -97,28 +88,25 @@ class FlightArchitect extends Component {
             updatedOptions.package1 = 0;
             updatedOptions.package2 = 0;
             updatedOptions.package3 = 0;
-            updatedReadyOption[3] = true;
-            updatedReadyOption[4] = true;
-            updatedReadyOption[5] = true;
+            updatedReadyOptions[3] = true;
+            updatedReadyOptions[4] = true;
+            updatedReadyOptions[5] = true;
             priceSubtraction = updatedPrice[categoryType];
-            updatedSelectedItem[categoryType] = itemNumber;
             updatedPrice.package = priceAddition;
         } else if (categoryType === 'theme') {
             updatedOptions.theme1 = 0;
             updatedOptions.theme2 = 0;
             updatedOptions.theme3 = 0;
-            updatedReadyOption[6] = true;
-            updatedReadyOption[7] = true;
-            updatedReadyOption[8] = true;
+            updatedReadyOptions[6] = true;
+            updatedReadyOptions[7] = true;
+            updatedReadyOptions[8] = true;
             priceSubtraction = updatedPrice[categoryType];
-            updatedSelectedItem[categoryType] = itemNumber;
             updatedPrice.theme = priceAddition;
         } else if (categoryType === 'entertainment') {
             updatedOptions.entertainment1 = 0;
             updatedOptions.entertainment2 = 0;
             updatedOptions.entertainment3 = 0;
             priceSubtraction = updatedPrice[categoryType];
-            updatedSelectedItem[categoryType] = itemNumber;
             updatedReadyForLaunch = true;
             updatedPrice.entertainment = priceAddition;
         } else {
@@ -126,15 +114,14 @@ class FlightArchitect extends Component {
             return;
         }
 
-        updatedOptions[type] = updatedCount;
+        updatedOptions[type] = 1;
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition - priceSubtraction;
         this.setState({
             architectOptions: updatedOptions,
             previousPrice: updatedPrice,
-            readyOption: updatedReadyOption,
+            readyOptions: updatedReadyOptions,
             readyForLaunch: updatedReadyForLaunch,
-            selectedItem: updatedSelectedItem,
             totalPrice: newPrice
         })
     }
@@ -149,12 +136,18 @@ class FlightArchitect extends Component {
         })
     }
 
+    /*======================================================================
+    // This will close the Contact HQ modal.
+    ======================================================================*/
     handleLaunchClose = (e) => {
         this.setState({
             launchForm: false
         })
     }
 
+    /*======================================================================
+    // This will handle submission of the contact form.
+    ======================================================================*/
     handleContactHQ = (e) => {
         alert("Contact HQ coming soon.");
         this.setState({
@@ -167,7 +160,7 @@ class FlightArchitect extends Component {
             <Fragment>
                 <Header />
                 <Flight architectOptions={this.state.architectOptions} />
-                <FlightControls handleLaunch={this.handleLaunch} optionReady={this.state.readyOption} optionSelected={this.selectOptionHandler} launchReady={this.state.readyForLaunch} price={this.state.totalPrice} />
+                <FlightControls aOptions={this.state.architectOptions} launch={this.handleLaunch} optionReady={this.state.readyOptions} optionSelected={this.selectOptionHandler} launchReady={this.state.readyForLaunch} price={this.state.totalPrice} />
                 {(this.state.launchForm)
                     ? <FlightLaunch handleClose={this.handleLaunchClose} handleContact={this.handleContactHQ} />
                     : <div></div> }

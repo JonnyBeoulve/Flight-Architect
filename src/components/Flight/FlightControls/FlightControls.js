@@ -29,17 +29,19 @@ const FlightControls = (props) => (
     <div className={classes.FlightControls}>
         <p>Current Price: $<strong>{props.price}</strong></p>
         <div className={classes.FlightControlsBox}>
-            {controls.map((ctrl,index) => (
+            {controls.map((ctrl,index) => {
+                return (
                 <FlightControl 
+                    isActive={props.aOptions[`${ctrl.type}`]}
                     isDisabled={props.optionReady[`${index}`]} 
                     selected={() => props.optionSelected(ctrl.type)} 
                     key={ctrl.label} 
                     label={ctrl.label} 
-                    description={ctrl.description} 
-                />
-            ))}
+                    description={ctrl.description}
+                /> )
+            })}
         </div>
-        <button className={classes.LaunchButton} disabled={!props.launchReady} onClick={() => props.handleLaunch()}>PROCEED TO LAUNCH</button>
+        <button className={classes.LaunchButton} disabled={!props.launchReady} onClick={() => props.launch()}>PROCEED TO LAUNCH</button>
     </div>
 );
 

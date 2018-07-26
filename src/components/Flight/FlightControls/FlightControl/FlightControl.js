@@ -14,7 +14,10 @@ const FlightControl = (props) => (
         <div className={classes.Label}>{props.label}</div>
         <div className={classes.DescriptionCircle} data-tip={props.description}></div>
         <ReactTooltip type="light" effect="solid" />
-        <button disabled={!props.isDisabled} className={classes.Select} onClick={props.selected}>Select</button>
+        {(props.isActive === 1)
+            ? <button disabled={!props.isDisabled} className={classes.SelectActive} onClick={props.selected}>Select</button>
+            : <button disabled={!props.isDisabled} className={classes.SelectInactive} onClick={props.selected}>Select</button>
+        }
     </div>
 );
 
