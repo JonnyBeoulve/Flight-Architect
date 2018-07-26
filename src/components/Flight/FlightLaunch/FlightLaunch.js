@@ -3,7 +3,7 @@ import { fadeIn } from 'react-animations';
 import { StyleSheet, css } from 'aphrodite';
 
 import classes from './FlightLaunch.css';
-import FlightFormImg from '../../../img/flight-form-img.jpg';
+import FlightFormImg from '../../../assets/img/flight-form-img.jpg';
 
 /*======================================================== 
 // Animated styles using Aphrodite and React Animations.

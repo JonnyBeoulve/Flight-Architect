@@ -18,7 +18,10 @@ const styles = StyleSheet.create({
 /*======================================================================
 // As the user selects various flight options, this will employ 
 // css to switch visible elements on the page that denote the
-// options.
+// options. There are three packages, three themes, and three
+// entertainment options. Each corresponds to a tier, and the user
+// must select a package -> theme -> entertainment before contacting
+// Flight.
 ======================================================================*/
 class FlightOptions extends Component {
 

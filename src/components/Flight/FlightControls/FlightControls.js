@@ -22,7 +22,8 @@ const controls = [
 
 /*======================================================================
 // This will house the Flight Controls div which will contain several
-// options.
+// options. A disabled prop is passed down from FlightArchitect.js
+// which controls selection flow: package -> theme -> entertainment.
 ======================================================================*/
 const FlightControls = (props) => (
     <div className={classes.FlightControls}>
