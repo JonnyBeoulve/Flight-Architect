@@ -27,7 +27,7 @@ const controls = [
 ======================================================================*/
 const FlightControls = (props) => (
     <div className={classes.FlightControls}>
-        <p>Current Price: $<strong>{props.price}</strong></p>
+        <p>Estimated Price: $<strong>{props.price}</strong></p>
         <div className={classes.FlightControlsBox}>
             {controls.map((ctrl, index) => {
                 return (

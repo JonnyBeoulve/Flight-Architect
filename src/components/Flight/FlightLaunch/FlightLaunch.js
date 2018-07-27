@@ -4,7 +4,7 @@ import { StyleSheet, css } from 'aphrodite';
 
 import classes from './FlightLaunch.css';
 import FlightFormImg from '../../../assets/img/flight-form-img.jpg';
-import FlightLaunchOptions from './FlightLaunchOptions/FlightLaunchOptions';
+import FlightLaunchOption from './FlightLaunchOption/FlightLaunchOption';
 
 /*======================================================== 
 // Animated styles using Aphrodite and React Animations.
@@ -43,14 +43,14 @@ const FlightLaunch = (props) => (
     <div className={[classes.FlightLaunch, css(styles.fadeIn)].join(' ')}>
         <p className={classes.FlightLaunchClose} onClick={() => props.handleClose()}>x</p>
         <img src={FlightFormImg} alt="Flight Architect Logo"></img>
-        <h2>GET READY TO LAUNCH</h2>
         <div className={classes.LaunchOptionsList}>
             {flightOptions.map((option, index) => {
                 return (
-                    <FlightLaunchOptions
+                    <FlightLaunchOption
                         key={index}
                         selectedOption={props.arcOptions[`${option.type}`]}
-                        optionDetail={flightOptions[index].label}
+                        optionName={flightOptions[index].label}
+                        optionDescription={flightOptions[index].description}
                     /> )
             })}
         </div>

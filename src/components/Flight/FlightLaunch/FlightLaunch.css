@@ -6,7 +6,7 @@
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
-    height: 540px;
+    height: auto;
     width: 400px;
     background-image: linear-gradient(to right, #0e4981, #8d0c7c);
     border-radius: 2px;
