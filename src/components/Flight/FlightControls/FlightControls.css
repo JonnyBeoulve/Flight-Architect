@@ -36,6 +36,7 @@
 	-moz-box-shadow: 0 10px 6px -6px #333;
 	box-shadow: 0 10px 6px -6px #333;
     border-radius: 2px;
+    transition-duration: 1.5s;
 }
 
 .LaunchButton:hover {

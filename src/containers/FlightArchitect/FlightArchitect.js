@@ -162,7 +162,7 @@ class FlightArchitect extends Component {
                 <Flight architectOptions={this.state.architectOptions} />
                 <FlightControls aOptions={this.state.architectOptions} launch={this.handleLaunch} optionReady={this.state.readyOptions} optionSelected={this.selectOptionHandler} launchReady={this.state.readyForLaunch} price={this.state.totalPrice} />
                 {(this.state.launchForm)
-                    ? <FlightLaunch handleClose={this.handleLaunchClose} handleContact={this.handleContactHQ} />
+                    ? <FlightLaunch arcOptions={this.state.architectOptions} handleClose={this.handleLaunchClose} handleContact={this.handleContactHQ} price={this.state.totalPrice} />
                     : <div></div> }
                 <Footer />             
             </Fragment>

@@ -1,0 +1,17 @@
+.LaunchOption {
+    margin: 0 5px 10px 5px;
+    padding: 0 10px 0 10px;
+    background-color: #e06000;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8em;
+    cursor: pointer;
+
+    -webkit-box-shadow: 0 10px 6px -6px #333;
+	-moz-box-shadow: 0 10px 6px -6px #333;
+	box-shadow: 0 10px 6px -6px #333;
+}
+
+.LaunchOption:hover {
+    background-color: #e68134;
+}

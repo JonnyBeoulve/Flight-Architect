@@ -6,7 +6,7 @@
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
-    height: 500px;
+    height: 540px;
     width: 400px;
     background-image: linear-gradient(to right, #0e4981, #8d0c7c);
     border-radius: 2px;
@@ -64,15 +64,24 @@
     font-family: inherit;
     font-size: 1.2em;
     padding: 15px 30px;
+    border-radius: 2px;
+    transition-duration: 1.5s;
+
     -webkit-box-shadow: 0 10px 6px -6px #333;
 	-moz-box-shadow: 0 10px 6px -6px #333;
 	box-shadow: 0 10px 6px -6px #333;
-    border-radius: 2px;
 }
 
 .FlightLaunch button:hover {
     background-color: #e68134;
     border: 1px solid #e68134;
+}
+
+.LaunchOptionsList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 479px) {
