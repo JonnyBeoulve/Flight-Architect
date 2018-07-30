@@ -1,7 +1,7 @@
 {
   "name": "flight-architect",
   "description": "This React web app serves as an interactive element of my Flight website, allowing users to select a private spaceflight package and customize their capsule experience with a variety of selections prior to launch.",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "private": true,
   "dependencies": {
     "aphrodite": "^2.1.1",

@@ -3,23 +3,9 @@ import React, {Component, Fragment} from 'react';
 import Flight from '../../components/Flight/Flight';
 import FlightControls from '../../components/Flight/FlightControls/FlightControls';
 import FlightLaunch from '../../components/Flight/FlightLaunch/FlightLaunch';
-import Footer from '../../components/Layout/Footer/Footer'
-import Header from '../../components/Layout/Header/Header'
-
-/*======================================================================
-// These are the prices for the various options.
-======================================================================*/
-const OPTION_PRICES = {
-    package1: 200000,
-    package2: 340000,
-    package3: 500000,
-    theme1: 0,
-    theme2: 2500,
-    theme3: 3000,
-    entertainment1: 0,
-    entertainment2: 500,
-    entertainment3: 800
-};
+import Footer from '../../components/Layout/Footer/Footer';
+import Header from '../../components/Layout/Header/Header';
+import { FLIGHT_OPTIONS } from  '../../store/store.js';
 
 /*======================================================================
 // This container will store the state of which options the user has
@@ -64,15 +50,18 @@ class FlightArchitect extends Component {
     /*======================================================================
     // This will handle the updating of state and pricing when a user
     // selects an option. CategoryType will store the name of the category
-    // to reset the state of the other options before the selected
-    // option is added to the div. Price state, which Select buttons have
-    // been made active, and whether or not the user can launch
-    // (only a package is required) is also handled here.
+    // after removing the suffix number. optionIndex will locate the
+    // index of the corresponding option in FLIGHT_OPTIONS to reference
+    // the price.  Depending upon the category type, changes will be made
+    // to state to alter selectable items and more.
     ======================================================================*/
     selectOptionHandler = (type) => {
         const categoryType = type.substr(0, type.length - 1);
+        const optionIndex = (FLIGHT_OPTIONS.findIndex((option) => {
+            return option.type === type;
+        }))
+        let priceAddition = FLIGHT_OPTIONS[optionIndex].price;
         let priceSubtraction = 0;
-        let priceAddition = OPTION_PRICES[type];
         const updatedOptions = {
             ...this.state.architectOptions
         };
