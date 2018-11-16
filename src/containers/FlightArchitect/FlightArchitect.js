@@ -138,7 +138,7 @@ class FlightArchitect extends Component {
     // This will handle submission of the contact form.
     ======================================================================*/
     handleContactHQ = (e) => {
-        alert("Contact HQ coming soon.");
+        alert("HQ has been contacted with your inquiry. Standby for assessment.");
         this.setState({
             launchForm: false
         })
