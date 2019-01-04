@@ -86,9 +86,9 @@
     }
 }
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 640px) {
     .FlightControlsBox {
-        width: 85%;
+        width: 95%;
         height: 100%;
         display: flex;
         flex-direction: column;
