@@ -7,10 +7,10 @@ You can view the current alpha version on Firebase here:
 https://flight-architect.firebaseapp.com/
 
 ## Programming
+* React
+* JavaScript
 * HTML
 * CSS
-* JavaScript
-* React.js
 
 ## Notes
 The majority of the control logic has been finished, but there's work to do on the front-end. Namely, how each package, theme, and entertainment option is displayed visually will be dramatically improved in an upcoming update.

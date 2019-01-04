@@ -8,6 +8,10 @@
     text-align: center;
 }
 
+a {
+    color: #bb06a3;
+}
+
 a:visited {
     color: #bb06a3;
 }

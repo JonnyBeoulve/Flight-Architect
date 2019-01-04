@@ -22,11 +22,6 @@
     float: left;
     margin: 5px 0 5px 0;
     cursor: pointer;
-    opacity: 0.9;
-}
-
-.HeaderName img:hover {
-    opacity: 1;
 }
 
 .HeaderName h2 {
@@ -34,11 +29,6 @@
     margin-left: 10px;
     font-size: 1.6em;
     color: black;
-    opacity: 0.7;
-}
-
-.HeaderName h2:hover {
-    opacity: 1;
 }
 
 .HeaderLink {

@@ -43,9 +43,9 @@
     font-weight: bold;
     text-align: center;
     display: inline-block;
-    width: 3ex;
-    height: 3ex;
-    border-radius: 15ex;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
     background: #f7f7f7;
     border: 2px solid #8d0c7c;
     -webkit-box-shadow: 0 5px 3px -3px #333;
@@ -55,7 +55,7 @@
 
 .DescriptionCircle::before {
     content: "?";
-    font-size: 120%;
+    font-size: 1.6em;
     font-weight: bold;
     color: #8d0c7c;
 }
