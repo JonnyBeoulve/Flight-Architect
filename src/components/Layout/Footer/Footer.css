@@ -1,17 +1,17 @@
 .Footer {
-    height: 300px;
-    width: 100%;
+  height: 300px;
+  width: 100%;
 }
 
 .Footer p {
-    line-height: 280px;
-    text-align: center;
+  line-height: 280px;
+  text-align: center;
 }
 
 a {
-    color: #bb06a3;
+  color: #bb06a3;
 }
 
 a:visited {
-    color: #bb06a3;
+  color: #bb06a3;
 }

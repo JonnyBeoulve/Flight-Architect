@@ -1,25 +1,24 @@
 .Flight {
-    width: 100%;
-    margin: auto;
-    height: 500px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-    background-color: #f7f7f7;
-    padding-top: 5px;
+  width: 100%;
+  margin: auto;
+  height: 500px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background-color: #f7f7f7;
+  padding-top: 5px;
 }
 
 .Flight p {
-    margin: 200px auto;
-    color: black;
+  margin: 200px auto;
+  color: black;
 }
 
 @media only screen and (max-width: 479px) {
-
-    .Flight {
-        height: 600px;
-    }
-    .Flight p {
-        font-size: .9em;
-    }
+  .Flight {
+    height: 600px;
+  }
+  .Flight p {
+    font-size: 0.9em;
+  }
 }

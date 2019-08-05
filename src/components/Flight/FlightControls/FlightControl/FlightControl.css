@@ -1,121 +1,120 @@
 .FlightControl {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
 }
 
 .FlightControl button {
-    display: block;
-    font: inherit;
-    padding: 5px;
-    margin: 0 5px;
-    width: 80px;
-    border: 1px solid #0e4981;
-    cursor: pointer;
-    outline: none;
+  display: block;
+  font: inherit;
+  padding: 5px;
+  margin: 0 5px;
+  width: 80px;
+  border: 1px solid #0e4981;
+  cursor: pointer;
+  outline: none;
 }
 
 .FlightControl button:disabled {
-    border-top: 3px solid #C7C6C6;
-    background-color: #C7C6C6;
-    color: #888888;
-    cursor: default;
+  border-top: 3px solid #c7c6c6;
+  background-color: #c7c6c6;
+  color: #888888;
+  cursor: default;
 }
 
 .FlightControl button:hover:disabled {
-    border-top: 3px solid #C7C6C6;
-    background-color: #C7C6C6;
-    color: #888888;
-    cursor: not-allowed;
+  border-top: 3px solid #c7c6c6;
+  background-color: #c7c6c6;
+  color: #888888;
+  cursor: not-allowed;
 }
 
 .Label {
-    padding: 10px;
-    font-weight: bold;
-    width: 230px;
+  padding: 10px;
+  font-weight: bold;
+  width: 230px;
 }
 
 .DescriptionCircle {
-    font-size: 50%;
-    font-family: sans-serif;
-    vertical-align: middle;
-    font-weight: bold;
-    text-align: center;
-    display: inline-block;
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    background: #f7f7f7;
-    border: 2px solid #8d0c7c;
-    -webkit-box-shadow: 0 5px 3px -3px #333;
-	-moz-box-shadow: 0 5px 3px -3px #333;
-	box-shadow: 0 5px 3px -3px #333;
+  font-size: 50%;
+  font-family: sans-serif;
+  vertical-align: middle;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: #f7f7f7;
+  border: 2px solid #8d0c7c;
+  -webkit-box-shadow: 0 5px 3px -3px #333;
+  -moz-box-shadow: 0 5px 3px -3px #333;
+  box-shadow: 0 5px 3px -3px #333;
 }
 
 .DescriptionCircle::before {
-    content: "?";
-    font-size: 1.6em;
-    font-weight: bold;
-    color: #8d0c7c;
+  content: "?";
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #8d0c7c;
 }
 
 .DescriptionCircle:hover {
-    background: #e68134;
+  background: #e68134;
 }
 
-.FlightControl .SelectInactive {  
-    background-color: #8d0c7c;
-    border-top: 3px solid #8d0c7c;
-    color: white;
-    border-radius: 2px;
-    -webkit-box-shadow: 0 5px 3px -3px #333;
-	-moz-box-shadow: 0 5px 3px -3px #333;
-    box-shadow: 0 5px 3px -3px #333;
-    transition-duration: 1.5s;
+.FlightControl .SelectInactive {
+  background-color: #8d0c7c;
+  border-top: 3px solid #8d0c7c;
+  color: white;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 5px 3px -3px #333;
+  -moz-box-shadow: 0 5px 3px -3px #333;
+  box-shadow: 0 5px 3px -3px #333;
+  transition-duration: 1.5s;
 }
 
-.FlightControl .SelectInactive:hover  {  
-    border-top: 3px solid #e68134;
+.FlightControl .SelectInactive:hover {
+  border-top: 3px solid #e68134;
 }
 
-.FlightControl .SelectActive {  
-    background-color: #e68134;
-    border-top: 3px solid #8d0c7c;
-    color: white;
-    border-radius: 2px;
-    -webkit-box-shadow: 0 5px 3px -3px #333;
-	-moz-box-shadow: 0 5px 3px -3px #333;
-    box-shadow: 0 5px 3px -3px #333;
-    transition-duration: 1.5s;
+.FlightControl .SelectActive {
+  background-color: #e68134;
+  border-top: 3px solid #8d0c7c;
+  color: white;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 5px 3px -3px #333;
+  -moz-box-shadow: 0 5px 3px -3px #333;
+  box-shadow: 0 5px 3px -3px #333;
+  transition-duration: 1.5s;
 }
 
-.FlightControl .SelectActive:hover  {  
-    border-top: 3px solid #8d0c7c;
+.FlightControl .SelectActive:hover {
+  border-top: 3px solid #8d0c7c;
 }
 
 .FlightControl .Select:active {
-    color: white;
-    background-color: #6d005e;
+  color: white;
+  background-color: #6d005e;
 }
 
 @media only screen and (max-width: 640px) {
-  
-    .FlightControl {
-        display: flex;
-        flex-direction: row;
-        margin: 5px;
-        width: 100%;
-    }
+  .FlightControl {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    width: 100%;
+  }
 
-    .Label {
-        font-size: .8em;
-        padding: 0;
-        font-weight: bold;
-        width: 70%;
-    }
+  .Label {
+    font-size: 0.8em;
+    padding: 0;
+    font-weight: bold;
+    width: 70%;
+  }
 
-    .FlightControl .Select { 
-        font-size: .8em;
-    }
+  .FlightControl .Select {
+    font-size: 0.8em;
+  }
 }

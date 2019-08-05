@@ -1,101 +1,101 @@
 .FlightControls {
-    width: 100%;
-    background-color: #1e6cb6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    -webkit-box-shadow: 0 10px 6px -6px #333;
-	-moz-box-shadow: 0 10px 6px -6px #333;
-	box-shadow: 0 10px 6px -6px #333;
-    margin: auto;
-    padding: 10px 0;
-    border: 1px solid #0e4981;
-    border-radius: 2px;
+  width: 100%;
+  background-color: #1e6cb6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-box-shadow: 0 10px 6px -6px #333;
+  -moz-box-shadow: 0 10px 6px -6px #333;
+  box-shadow: 0 10px 6px -6px #333;
+  margin: auto;
+  padding: 10px 0;
+  border: 1px solid #0e4981;
+  border-radius: 2px;
 }
 
 .FlightControlsBox {
-    width: 59%;
-    max-width: 1300px;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  width: 59%;
+  max-width: 1300px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .LaunchButton {
-    margin: 40px;
-    background-color: #e06000;
-    outline: none;
-    cursor: pointer;
-    border: 1px solid #e06000;
-    color: white;
-    font-family: inherit;
-    font-size: 1.2em;
-    padding: 15px 30px;
-    -webkit-box-shadow: 0 10px 6px -6px #333;
-	-moz-box-shadow: 0 10px 6px -6px #333;
-	box-shadow: 0 10px 6px -6px #333;
-    border-radius: 2px;
-    transition-duration: 1.5s;
+  margin: 40px;
+  background-color: #e06000;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #e06000;
+  color: white;
+  font-family: inherit;
+  font-size: 1.2em;
+  padding: 15px 30px;
+  -webkit-box-shadow: 0 10px 6px -6px #333;
+  -moz-box-shadow: 0 10px 6px -6px #333;
+  box-shadow: 0 10px 6px -6px #333;
+  border-radius: 2px;
+  transition-duration: 1.5s;
 }
 
 .LaunchButton:hover {
-    background-color: #e68134;
-    border: 1px solid #e68134;
-    -webkit-box-shadow: 0 10px 6px -6px #333;
-	-moz-box-shadow: 0 10px 6px -6px #333;
-	box-shadow: 0 10px 6px -6px #333;
+  background-color: #e68134;
+  border: 1px solid #e68134;
+  -webkit-box-shadow: 0 10px 6px -6px #333;
+  -moz-box-shadow: 0 10px 6px -6px #333;
+  box-shadow: 0 10px 6px -6px #333;
 }
 
 .LaunchButton:disabled {
-    background-color: #C7C6C6;
-    cursor: not-allowed;
-    border: 1px solid #ccc;
-    color: #888888;
-    -webkit-box-shadow: 0 10px 6px -6px #333;
-	-moz-box-shadow: 0 10px 6px -6px #333;
-	box-shadow: 0 10px 6px -6px #333;
+  background-color: #c7c6c6;
+  cursor: not-allowed;
+  border: 1px solid #ccc;
+  color: #888888;
+  -webkit-box-shadow: 0 10px 6px -6px #333;
+  -moz-box-shadow: 0 10px 6px -6px #333;
+  box-shadow: 0 10px 6px -6px #333;
 }
 
 .LaunchButton:not(:disabled) {
-    animation: enable 0.3s linear;
-    -webkit-box-shadow: 0 10px 6px -6px #333;
-	-moz-box-shadow: 0 10px 6px -6px #333;
-	box-shadow: 0 10px 6px -6px #333;
+  animation: enable 0.3s linear;
+  -webkit-box-shadow: 0 10px 6px -6px #333;
+  -moz-box-shadow: 0 10px 6px -6px #333;
+  box-shadow: 0 10px 6px -6px #333;
 }
 
 @keyframes enable {
-    0% {
-        transform: scale(1);
-    }
-    60% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media only screen and (max-width: 1366px) {
-    .FlightControlsBox {
-        width: 45%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
+  .FlightControlsBox {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 }
 
 @media only screen and (max-width: 640px) {
-    .FlightControlsBox {
-        width: 95%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
+  .FlightControlsBox {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 
-    .LaunchButton {
-        font-size: 1em;
-    }
+  .LaunchButton {
+    font-size: 1em;
+  }
 }

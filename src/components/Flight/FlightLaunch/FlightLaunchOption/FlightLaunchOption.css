@@ -1,19 +1,19 @@
 .LaunchOption {
-    margin: 5px 5px 5px 5px;
-    padding: 0 10px 0 10px;
-    background-color: #e68134;
-    color: #fff;
-    border-radius: 2px;
-    font-family: inherit;
-    font-weight: bold;
-    font-size: 0.8em;
-    cursor: default;
+  margin: 5px 5px 5px 5px;
+  padding: 0 10px 0 10px;
+  background-color: #e68134;
+  color: #fff;
+  border-radius: 2px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 0.8em;
+  cursor: default;
 
-    -webkit-box-shadow: 0 10px 6px -6px #333;
-	-moz-box-shadow: 0 10px 6px -6px #333;
-	box-shadow: 0 10px 6px -6px #333;
+  -webkit-box-shadow: 0 10px 6px -6px #333;
+  -moz-box-shadow: 0 10px 6px -6px #333;
+  box-shadow: 0 10px 6px -6px #333;
 }
 
 .LaunchOption:hover {
-    background-color: #e68134;
+  background-color: #e68134;
 }
